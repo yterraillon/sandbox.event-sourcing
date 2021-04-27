@@ -22,6 +22,8 @@ namespace EventSourcing.Infrastructure
             return product;
         }
 
+// TODO : lever un évènement à chaque Save, pour alimenter une table de projections
+// https://docs.microsoft.com/fr-fr/dotnet/api/system.collections.generic.queue-1?view=net-5.0
         public void Save(Product product)
         {
             if (!_inMemoryStream.ContainsKey(product.Id))
